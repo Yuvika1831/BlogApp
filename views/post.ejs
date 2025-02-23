@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %> | My Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Blog</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/add-post">Add Post</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1><%= post.title %></h1>
+        <img src="<%= post.image %>" class="post-image" alt="Blog Image">
+        <p><%= post.content %></p>
+        <p class="author">By <%= post.author %></p>
+    </div>
+
+    <footer>
+        <p>© 2025 My Blog | All rights reserved</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">My Blog</div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/add-post">Add Post</a>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <header class="hero">
+        <h1>Welcome to My Blog</h1>
+        <p>Explore a collection of amazing articles and share your own thoughts with the world.</p>
+        <a href="/add-post" class="btn">Write a Blog</a>
+    </header>
+
+    <!-- Blog Posts Section -->
+    <div class="container">
+        <h2>Latest Posts</h2>
+        <% if (posts.length === 0) { %>
+            <p class="no-posts">No posts available. Be the first to write one!</p>
+        <% } else { %>
+            <% posts.forEach(post => { %>
+                <div class="post-card">
+                    <img src="<%= post.image %>" alt="Blog Image">
+                    <div class="post-content">
+                        <h3><a href="/post?id=<%= post.id %>"><%= post.title %></a></h3>
+                        <p class="excerpt"><%= post.content.substring(0, 100) %>...</p>
+                        <p class="author">By <%= post.author %></p>
+                    </div>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>© 2025 My Blog | All rights reserved</p>
+    </footer>
+
+</body>
+</html>
